@@ -47,6 +47,6 @@
 
 	$sorted_arr = arr_sort($money);
 	$result = get_money($sum,$sorted_arr);
-	var_dump($result);	
+	echo json_encode($result);	
 
 ?>

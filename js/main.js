@@ -20,8 +20,13 @@ $('.btn').click(function (e) {
             sum: sum
         },
         success: function(result){
-           alert(result);
-           console.log("data");
+            let parsedArr = JSON.parse(result);
+            $('table').empty();
+            $('table').append('<tr><th>номинал</th><th>количество</th></tr>');
+            for (const [key, value] of Object.entries(parsedArr))
+            {
+                $('table').append('<tr><th>'+ key + '</th><th>' + value + '</th></tr>');
+            }
         }
     });
 
