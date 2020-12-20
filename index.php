@@ -26,31 +26,31 @@
 		</tr>
 		<tr>
 			<td>5</td>
-			<td></td>
+			<td>0</td>
 		</tr>
 		<tr>
 			<td>10</td>
-			<td></td>
+			<td>0</td>
 		</tr>
 		<tr>
 			<td>20</td>
-			<td></td>
+			<td>0</td>
 		</tr>
 		<tr>
 			<td>50</td>
-			<td></td>
+			<td>0</td>
 		</tr>
 		<tr>
 			<td>100</td>
-			<td></td>
+			<td>0</td>
 		</tr>
 		<tr>
 			<td>200</td>
-			<td></td>
+			<td>0</td>
 		</tr>
 		<tr>
 			<td>500</td>
-			<td></td>
+			<td>0</td>
 		</tr>
 	</table>
 		<p class="msg none"> ddff</p>

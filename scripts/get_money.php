@@ -1,9 +1,11 @@
 <?php 
+
 	ob_end_clean();
-	$money = $_POST['money'];
-	$sum = $_POST['sum'];
-    
-	function get_money($sum,$money)
+	$money = $_POST['money'];// номинал
+	$sum = $_POST['sum'];// нужная сумма
+	$response = array("status" => 1);
+
+	function get_money($sum,$money,&$response)
 	{
 	    if (($sum > 0) && ($sum % 5 == 0))
     	{	
@@ -22,7 +24,18 @@
     	}
     	else
     	{
-    		echo "oshibka";
+    		$firs = $sum;
+    		$second = $sum;
+
+			for (; $first % 5 != 0; $first++){}
+			$res_err[0] = $first;
+
+			for (; $second % 5 != 0; $second--){}
+			$res_err[1] = $second;
+
+			$response["status"] = 0;
+			return $res_err;
+			
     	}
     	
     	return $res;
@@ -45,8 +58,14 @@
         return $arr;  
 	}
 
+	/*
+		из-за особенности алгоритма, перебор купюр должен начинаться
+		с максимальной купюры, поэтому сначала сортируем по убыванию, а потом ищем количетсво
+	*/
 	$sorted_arr = arr_sort($money);
-	$result = get_money($sum,$sorted_arr);
-	echo json_encode($result);	
+	$result = get_money($sum,$sorted_arr,$response);
+
+	echo json_encode($result);
+	echo json_encode($response);	
 
 ?>
