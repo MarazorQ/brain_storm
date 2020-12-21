@@ -1,2 +1,3 @@
 # brain_fuck
-some tascks
+task3 - ATM
+task2 -Stroop
