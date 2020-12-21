@@ -1,61 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<title>ATM</title>
-	<link rel="stylesheet" href="css/index.css">
+	<title>Тест струпа</title>
 </head>
 <body>
-	<form  class="profile" method="POST">
-		<h1> Банкомат</h1>
-		<div class="item">
-			<label for=""> Номинал в наличии </label>
-			<input type="text" name="money" placeholder="">
-		</div>
-		<div class="item"> 
-			<label for=""> Ваша сумма </label>
-			<input type="text" name="sum" placeholder="введите нужную сумму">
-		</div>
-		<div type="submit" class="item">
-			<button class="btn">Отправить</button>
-		</div>
-	<table class="msg none">
-		<tr>
-			<th>номинал</th>
-			<th>количество</th>
-		</tr>
-		<tr>
-			<td>5</td>
-			<td>0</td>
-		</tr>
-		<tr>
-			<td>10</td>
-			<td>0</td>
-		</tr>
-		<tr>
-			<td>20</td>
-			<td>0</td>
-		</tr>
-		<tr>
-			<td>50</td>
-			<td>0</td>
-		</tr>
-		<tr>
-			<td>100</td>
-			<td>0</td>
-		</tr>
-		<tr>
-			<td>200</td>
-			<td>0</td>
-		</tr>
-		<tr>
-			<td>500</td>
-			<td>0</td>
-		</tr>
-	</table>
-		<p class="msg none"> ddff</p>
-	</form>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="js/main.js"></script>
+
+	<style>
+		div{
+			font-size: 50px;
+		}
+	</style>
+
+	<div>
+		<?php 
+
+			const WORD_COUNT = 5;
+
+			function stroop()
+			{
+				$color_array = ["red", "blue", "green", "yellow", "lime", "magenta", "black", "gold", "gray", "tomato"];
+				for ($i = 0; $i < WORD_COUNT; $i++)
+				{
+					$value_of_color = $color_array[rand(0,9)];
+					for ($j = 0; $j < WORD_COUNT; $j++)
+					{
+						$value_of_word = $color_array[rand(0,9)];
+						while ($value_of_word == $value_of_color)
+						{
+							$value_of_color = $color_array[rand(0,9)];
+						}
+						 echo "<span style=color:".$value_of_color.">"." ".$value_of_word." "."</span>";
+					}
+					echo "</br>";
+				}
+			}
+
+			stroop();
+
+		?>
+	</div>
+
 </body>
 </html>
