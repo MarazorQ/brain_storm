@@ -13,8 +13,7 @@
 
 		public function getPosition()
 		{	
-			$arr = array($this->x,$this->y);
-			return $arr;
+			return  array($this->x,$this->y);
 		}
 	}
 
@@ -37,8 +36,7 @@
             }
             else
             {
-                echo "erroro king </br>";
-                //die();
+                echo "error king </br>";
             }
 		}
 	}
@@ -64,19 +62,17 @@
             else
             {
                 echo "erroro queen</br>";
-                //die();
             }
 		}
 	}
 
 	$king = new King(4,3);
 	$king->move(3,3);
-    $res = $king->getPosition();
+    var_dump($king->getPosition());
 
-    var_dump($res);
     echo "</br>";
+
 	$queen = new Queen(1,1);
 	$queen->move(6,6);
-
 	var_dump($queen->getPosition());
 
