@@ -5,7 +5,7 @@
 
 $('.btn').click(function (e) {
     e.preventDefault();
-
+    console.log(response);
     $(`table`).removeClass('msg none');
 
     let money = $('input[name="money"]').val().split(','),
@@ -19,6 +19,7 @@ $('.btn').click(function (e) {
             sum: sum
         },
         success: function(result, response){
+            console.log(response);
             if (response.status != 0)
             {
                 let parsedArr = JSON.parse(result);
