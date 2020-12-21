@@ -5,7 +5,7 @@
 
 $('.btn').click(function (e) {
     e.preventDefault();
-    console.log(response);
+    //console.log(response);
     $(`table`).removeClass('msg none');
 
     let money = $('input[name="money"]').val().split(','),
@@ -18,10 +18,11 @@ $('.btn').click(function (e) {
             money: money,
             sum: sum
         },
-        success: function(result, response){
-            console.log(response);
+        success: function(response, result){
+            alert("fdf");
             if (response.status != 0)
-            {
+            {   
+                alert("truye");
                 let parsedArr = JSON.parse(result);
 
                 $('table').empty();
@@ -31,6 +32,7 @@ $('.btn').click(function (e) {
                     $('table').append('<tr><th>'+ key + '</th><th>' + value + '</th></tr>');
                 }
             }else{
+                alert("error");
                 $(`table`).addClass('msg none');
                 $(`p`).removeClass('msg none');
 
