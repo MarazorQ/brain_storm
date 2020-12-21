@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
 	<title>Тест струпа</title>
+	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
-	<style>
-		div{
-			font-size: 50px;
-		}
-	</style>
-
 	<div>
 		<?php 
 
@@ -39,6 +34,5 @@
 
 		?>
 	</div>
-
 </body>
 </html>
