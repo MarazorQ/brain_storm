@@ -65,7 +65,7 @@
 	$sorted_arr = arr_sort($money);
 	$result = get_money($sum,$sorted_arr,$response);
 
-	echo json_encode($result);
-	echo json_encode($response);	
+	echo json_encode($response);
+	echo json_encode($result);	
 
 ?>

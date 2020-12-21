@@ -14,7 +14,6 @@ $('.btn').click(function (e) {
     $.ajax({
         url: 'scripts/get_money.php',
         type: 'POST',
-        //dataType: 'json',
         data: {
             money: money,
             sum: sum
@@ -35,10 +34,10 @@ $('.btn').click(function (e) {
                 $(`p`).removeClass('msg none');
 
                 let parsedError = JSON.parse(result);
+                
                 $('p').empty;
                 $('p').text('Неверная сумма. Выбирите' + parsedError[0] + 'или' + parsedError[1] + '.');
             }
-            
         },
         error: function(res_err){
             
