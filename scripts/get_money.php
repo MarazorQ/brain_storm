@@ -3,7 +3,7 @@
 	ob_end_clean();
 	$money = $_POST['money'];// номинал
 	$sum = $_POST['sum'];// нужная сумма
-	$response = array("status" => 1);
+	$response = true;
 
 	function get_money($sum,$money,&$response)
 	{
@@ -33,7 +33,7 @@
 			for (; $second % 5 != 0; $second--){}
 			$res_err[1] = $second;
 
-			$response["status"] = 0;
+			$response = false;
 			return $res_err;
 			
     	}
@@ -65,7 +65,11 @@
 	$sorted_arr = arr_sort($money);
 	$result = get_money($sum,$sorted_arr,$response);
 
-	echo json_encode($response);
-	echo json_encode($result);	
+    $data = [
+        'data' => $result,
+        'status' => $response
+    ];
+
+	die(json_encode($data));	
 
 ?>
