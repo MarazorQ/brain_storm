@@ -19,10 +19,12 @@ $('.btn').click(function (e) {
             sum: sum
         },
         success: function(data){
-            if (data.status)
+            let parsedData = JSON.parse(data);
+            if (parsedData.status)
             {   
-                let parsedArr = JSON.parse(data.result);
+                let parsedArr = parsedData.data; 
 
+                $(`p`).addClass('msg none');
                 $('table').empty();
                 $('table').append('<tr><th>номинал</th><th>количество</th></tr>');
 
@@ -33,10 +35,10 @@ $('.btn').click(function (e) {
                 $(`table`).addClass('msg none');
                 $(`p`).removeClass('msg none');
 
-                let parsedError = JSON.parse(data.result);
+                let parsedError = parsedData.data;
                 
-                $('p').empty;
-                $('p').text('Неверная сумма. Выбирите' + parsedError[0] + 'или' + parsedError[1] + '.');
+                $('p').empty();
+                $('p').text('Неверная сумма. Выбирите ' + parsedError[0] + ' или ' + parsedError[1] + '.');
             }
         },
         error: function(res_err){
