@@ -15,6 +15,8 @@ h1
 
 p{
     margin: 10px 0;
+    color: red;
+    font-weight: bold;
 }
 
 a{
@@ -79,12 +81,4 @@ button
 
 .none {
     display: none;
-}
-
-.exit{
-    color: blue;
-}
-
-.error{
-    border-bottom: 2px solid #ff4332;
 }
